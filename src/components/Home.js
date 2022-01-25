@@ -23,11 +23,7 @@ const Home = () => {
 
   const changeLoginRegisterForm = () => setIsRegister(!isRegister);;
 
-  const helloName = () => {
-    return userLoggedIn.map(
-      (user) => `Hello ${user.firstName} ${user.lastName}`
-    );
-  };
+  const helloName = () => `Hello ${userLoggedIn.firstName} ${userLoggedIn.lastName}`;
 
   const onRegister = (item) => {
     let user = users.filter((user) => user.email === item.email);
@@ -46,13 +42,13 @@ const Home = () => {
 
     if (user.length > 0) {
       setIsAuthenticated(true);
-      setUserLoggedIn(user);
+      user.map((item) => setUserLoggedIn(item));
       setIsShow(false);
     } else alert("Login information is not correct");
   };
 
   const onUpdate = (item) => {
-    setUserLoggedIn(userLoggedIn.map((user) => item));
+    setUserLoggedIn(item);
     setUsers(
       users.map((user) => {
         if (user.id === item.id) return item;
@@ -107,3 +103,4 @@ const Home = () => {
 };
 
 export default Home;
+

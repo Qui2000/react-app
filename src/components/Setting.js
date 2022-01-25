@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const Setting = (props) => {
   const { settingAction } = props;
+  const { userLoggedIn } = props;
   const [cities, setCities] = useState([
     { value: "danang", name: "Da Nang" },
     { value: "hochiminh", name: "Ho Chi Minh" },
@@ -10,12 +11,12 @@ const Setting = (props) => {
   ]);
 
   const [user, setUser] = useState({
-    id: props.userLoggedIn[0]["id"],
-    firstName: props.userLoggedIn[0]["firstName"],
-    lastName: props.userLoggedIn[0]["lastName"],
-    address: props.userLoggedIn[0]["address"],
-    email: props.userLoggedIn[0]["email"],
-    password: props.userLoggedIn[0]["password"],
+    id:         userLoggedIn.id,
+    firstName:  userLoggedIn.firstName,
+    lastName:   userLoggedIn.lastName,
+    address:    userLoggedIn.address,
+    email:      userLoggedIn.email,
+    password:   userLoggedIn.password,
   });
 
   const handleFormChange = (e) => {
