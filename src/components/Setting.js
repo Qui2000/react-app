@@ -31,7 +31,7 @@ const Setting = (props) => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    if (user.firstName === "" || user.firstName === "" || user.password === "")
+    if (user.firstName === "" || user.lastName === "" || user.password === "")
       alert("User name and password cannot be left blank ");
     else if (user.password.length < 6)
       alert("Password must be longer than 6 characters");

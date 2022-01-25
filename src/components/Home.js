@@ -12,12 +12,12 @@ const Home = () => {
   const [userLoggedIn, setUserLoggedIn] = useState();
   const [users, setUsers] = useState([
     {
-      id: 1,
-      firstName: "Ngo",
-      lastName: "Minh",
-      address: "hochiminh",
-      email: "hoangminhcp10@gmail.com",
-      password: "12345678",
+      id: "",
+      firstName: "",
+      lastName: "",
+      address: "",
+      email: "",
+      password: "",
     },
   ]);
 
